@@ -76,8 +76,9 @@ class RobotsController
       robot_name = action.match(/robot [0-9]+/i).to_s.capitalize
       robot = @robot_repository.find_by_name(robot_name)
       @robot_repository.activate(robot)
+      @robot_repository.active_robot = robot
     else
-      puts "Wrong input, try again..."
+      puts 'Wrong input, try again...'
     end
   end
 end

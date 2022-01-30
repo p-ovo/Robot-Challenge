@@ -9,7 +9,11 @@ class Router
     puts 'Where will you place the Robot?'
     first_choice = gets.chomp.downcase
 
-    @controller.place(place_input(first_choice)[0], place_input(first_choice)[1], place_input(first_choice)[2])
+    if first_choice.match?(check)
+      @controller.place(place_input(first_choice)[0], place_input(first_choice)[1], place_input(first_choice)[2])
+    else
+      puts 'Wrong input, try again...'
+    end
 
     loop do
       puts 'What do you want to do next?'

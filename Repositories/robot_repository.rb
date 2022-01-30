@@ -1,5 +1,5 @@
 class RobotRepository
-  attr_reader :robots, :active_robot
+  attr_accessor :robots, :active_robot
 
   def initialize
     @next_id = 1
